@@ -19,6 +19,8 @@ to = {regex: /To:\s(.+)\s<(.*@.*\..*)>/,  value:'to' }
 re_start = /X-GM-THRID:\s(.+)/ 
 re_boundary = /--(.+)--/ # Easy way to see where file ends, need to be smarter and use hash
 
+
+#these need to be in the exact same order they come in, in the mbox files
 attributes = [MIME_version, received, date, subject, from, to] # add the others later... re_message_plain, re_message_html, etc.
 
 
@@ -29,7 +31,13 @@ def parse_mbox_file file
   File.foreach(file) do |line|
     if re_boundary.match(line)
       messages << message
-      return
+
+      # if  (#there is another message...)
+        message = Message.create
+        attributes = [MIME_version, received, date, subject, from, to]
+      #else
+        # return
+      #end
     end
 
     attributes.each do |attribute|
