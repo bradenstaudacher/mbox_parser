@@ -32,7 +32,7 @@ class AttributeSeeker
   end  
 end
 
-message = Message.new
+message = Message.create
 messages = []
 entire_message_string = []
 message_strings = []
