@@ -19,8 +19,10 @@ GEM
     call-me (0.0.2.3)
       refining
     coderay (1.1.0)
+    ffi (1.9.10-java)
     i18n (0.7.0)
     json (1.8.3)
+    json (1.8.3-java)
     mbox (0.1.0)
       call-me
     method_source (0.8.2)
@@ -29,13 +31,22 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    pry (0.10.1-java)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+      spoon (~> 0.0)
     refining (0.0.5.5)
     slop (3.6.0)
+    spoon (0.0.4)
+      ffi
     thread_safe (0.3.5)
+    thread_safe (0.3.5-java)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
 
 PLATFORMS
+  java
   ruby
 
 DEPENDENCIES
