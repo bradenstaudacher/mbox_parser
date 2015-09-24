@@ -1,3 +1,4 @@
+require 'config.rb'
 require 'active_record'
 require 'pry'
 require 'mbox'
@@ -33,7 +34,7 @@ def parse_mbox_file file
       messages << message
 
       # if  (#there is another message...)
-        message = Message.create
+        # message = Message.create
         attributes = [MIME_version, received, date, subject, from, to]
       #else
         # return
@@ -73,3 +74,5 @@ class Message < ActiveRecord::Base
   validates :content_text, presence: true
   validates :content_html, presence: true
 end
+
+binding.pry
