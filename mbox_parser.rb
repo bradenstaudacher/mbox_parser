@@ -1,7 +1,7 @@
-require 'config.rb'
 require 'active_record'
 require 'pry'
 require 'mbox'
+require_relative './config.rb'
 
   # attr_accessor :mime_version, :received, :date, :subject, :from, :to, :gmail_labels, :delivered_to, :message_id, :content_text, :content_html
 
@@ -23,7 +23,6 @@ re_boundary = /--(.+)--/ # Easy way to see where file ends, need to be smarter a
 
 #these need to be in the exact same order they come in, in the mbox files
 attributes = [MIME_version, received, date, subject, from, to] # add the others later... re_message_plain, re_message_html, etc.
-
 
 message = Message.create
 messages = []
@@ -74,5 +73,3 @@ class Message < ActiveRecord::Base
   validates :content_text, presence: true
   validates :content_html, presence: true
 end
-
-binding.pry
